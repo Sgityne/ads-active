@@ -6,7 +6,7 @@ import { Link } from 'expo-router'
 import { images, icons } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
-import LineDiv from '../../components/LineDiv';
+import OAuth from '../../components/OAuth';
 
 const SignUp = () => {
   const [form, setform] = useState({
@@ -75,34 +75,7 @@ const SignUp = () => {
               isLoading={isSubmitting}
           />
 
-          <View className= {"flex-row justify-center items-center mt-8"}>
-
-            <LineDiv/>
-            <Text className="text-base font-rmedium color-tertiary px-2">
-              Or Sign Up with
-            </Text>
-            <LineDiv/>
-
-          </View>
-
-          <View className= {"flex-row mt-8"}>
-
-            <CustomButton
-                hasImage={true}
-                icon={icons.GoogleIcon}
-                //handlePress={submit}
-                containerStyles='grow mr-2'
-                //isLoading={isSubmitting}
-            />
-
-            <CustomButton
-                hasImage={true}
-                icon={icons.FacebookIcon}
-                //handlePress={submit}
-                containerStyles='grow ml-2'
-                //isLoading={isSubmitting}
-            />
-          </View>
+          <OAuth />
 
         </View>
 

@@ -6,7 +6,7 @@ import { Link, router } from 'expo-router'
 import { images, icons } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
-import LineDiv from '../../components/LineDiv';
+import OAuth from '../../components/OAuth';
 
 const SignIn = () => {
   const [form, setform] = useState({
@@ -75,35 +75,7 @@ const SignIn = () => {
               isLoading={isSubmitting}
           />
 
-          {/*make the entire altenative login/sign in option to a component and remove the facebook button making the google the only option just as the figma proto*/}
-          <View className= {"flex-row justify-center items-center mt-8"}>
-
-            <LineDiv/>
-            <Text className="text-base font-rmedium color-tertiary px-2">
-              Or
-            </Text>
-            <LineDiv/>
-
-          </View>
-
-          <View className= {"flex-row mt-8"}>
-
-            <CustomButton
-                hasImage={true}
-                icon={icons.GoogleIcon}
-                //handlePress={submit}
-                containerStyles='grow mr-2'
-                //isLoading={isSubmitting}
-            />
-
-            <CustomButton
-                hasImage={true}
-                icon={icons.FacebookIcon}
-                //handlePress={submit}
-                containerStyles='grow ml-2'
-                //isLoading={isSubmitting}
-            />
-          </View>
+          <OAuth />
 
         </View>
 
