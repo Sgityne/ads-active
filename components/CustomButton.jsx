@@ -1,7 +1,7 @@
 import { TouchableOpacity, Text } from 'react-native'
 import React from 'react'
 
-const CustomButton = ({ title, icon, handlePress, containerStyles, isLoading, IconLeft}) => {
+const CustomButton = ({ title, handlePress, containerStyles, isLoading, IconLeft}) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
@@ -17,7 +17,5 @@ const CustomButton = ({ title, icon, handlePress, containerStyles, isLoading, Ic
     </TouchableOpacity>
   )
 }
-{/* set to always have text and check if is needed to hasimage, after set to flex-row and
-  add a gap of 8px (propably will be a margin left) | verify which one is better */}
 
 export default CustomButton

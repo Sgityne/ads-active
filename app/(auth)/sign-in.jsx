@@ -1,21 +1,42 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
+import { ScrollView, View, Text, Image, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import { Link, router } from 'expo-router'
-
-import { images, icons } from '../../constants/';
+import { images } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import OAuth from '../../components/OAuth';
+import { getCurrentUser, signIn } from '../../lib/appwrite'
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 const SignIn = () => {
-  const [form, setform] = useState({
-    email: '',
-    password: '',
+  const { setUser, setIsLoggedIn } = useGlobalContext();
+  const [isSubmitting, setSubmitting] = useState(false)
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
   })
-  const [isSubmitting, setisSubmitting] = useState(false)
 
-  const submit = () => {}
+  const submit = async () => {
+    if (form.email === "" || form.password === "") {
+      Alert.alert("Error", "Please fill in all fields");
+    }
+
+    setSubmitting(true);
+
+    try {
+      await signIn(form.email, form.password);
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLoggedIn(true);
+
+      router.replace("/home");
+    } catch (error) {
+      Alert.alert("Error", error.message);
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <SafeAreaView className= "bg-primary h-full">
@@ -45,7 +66,7 @@ const SignIn = () => {
           <FormField
             title="Email"
             value={form.email}
-            handleChangeText={(e) => setform({ ...form, email: e})}
+            handleChangeText={(e) => setForm({ ...form, email: e})}
             otherStyles="mt-8"
             keyboardType="email-address"
             placeholder="Email Address"
@@ -53,7 +74,7 @@ const SignIn = () => {
           <FormField
             title="Password"
             value={form.password}
-            handleChangeText={(e) => setform({ ...form, password: e})}
+            handleChangeText={(e) => setForm({ ...form, password: e})}
             otherStyles="mt-4"
             placeholder="Password"
           />
@@ -68,7 +89,6 @@ const SignIn = () => {
           </TouchableOpacity>
 
           <CustomButton
-              hasImage={false}
               title="Login"
               handlePress={submit}
               containerStyles='w-full mt-6'

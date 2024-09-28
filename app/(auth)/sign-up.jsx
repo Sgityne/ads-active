@@ -1,21 +1,42 @@
-import { ScrollView, View, Text, Image, TouchableOpacity } from 'react-native'
+import { ScrollView, View, Text, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import {SafeAreaView} from 'react-native-safe-area-context'
-import { Link } from 'expo-router'
-
-import { images, icons } from '../../constants/';
+import { Link, router } from 'expo-router'
+import { images } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import OAuth from '../../components/OAuth';
+import { createUser } from '../../lib/appwrite';
+import { useGlobalContext } from '../../context/GlobalProvider';
 
 const SignUp = () => {
-  const [form, setform] = useState({
-    email: '',
-    password: '',
-  })
-  const [isSubmitting, setisSubmitting] = useState(false)
+  const {setUser, setIsLoggedIn } = useGlobalContext();
 
-  const submit = () => {}
+  const [isSubmitting, setisSubmitting] = useState(false)
+  const [form, setform] = useState({
+    username: "",
+    email: "",
+    password: "",
+  })
+
+  const submit = async () => {
+    if(form.username === "" || form.email === "" || form.password === "") {
+      Alert.alert('Error', 'Please fill in all fields');
+    }
+
+    setisSubmitting(true);
+    try {
+      const result = await createUser(form.email, form.password, form.username)
+      setUser(result);
+      setIsLoggedIn(true);
+
+      router.replace('/home');
+    } catch (error) {
+      Alert.alert('Error', error.message);
+    } finally {
+      setisSubmitting(false)
+    }
+  };
 
   return (
     <SafeAreaView className= "bg-primary h-full">
@@ -68,7 +89,6 @@ const SignUp = () => {
           />
 
           <CustomButton
-              hasImage={false}
               title="Sign Up"
               handlePress={submit}
               containerStyles='w-full mt-8'
@@ -80,7 +100,6 @@ const SignUp = () => {
         </View>
 
         <View className= {"flex-row justify-center py-4 gap-1"}>
-
           <Text className="text-base font-rmedium color-black">
             Already have an account?
           </Text>

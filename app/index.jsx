@@ -5,8 +5,13 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { images } from "../constants";
 import CustomButton from '../components/CustomButton';
+import { useGlobalContext } from '../context/GlobalProvider';
 
 export default function App() {
+  const {isLoading, isLoggedIn } = useGlobalContext
+
+  if(!isLoading && isLoggedIn) return <Redirect href="/home"/>
+
   return (
     <SafeAreaView className= "bg-primary h-full">
 
@@ -30,7 +35,6 @@ export default function App() {
 
           <View className= "space-y-4">
             <CustomButton
-              hasImage={false}
               title="Login"
               handlePress={() => router.push('/sign-in')}
               containerStyles='w-full'
