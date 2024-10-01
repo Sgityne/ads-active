@@ -6,7 +6,7 @@ import { images } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import OAuth from '../../components/OAuth';
-import { getCurrentUser, signIn } from '../../lib/appwrite'
+import { getCurrentUser, signIn, signOut } from '../../lib/appwrite'
 import { useGlobalContext } from '../../context/GlobalProvider';
 
 const SignIn = () => {
@@ -33,6 +33,7 @@ const SignIn = () => {
       router.replace("/home");
     } catch (error) {
       Alert.alert("Error", error.message);
+      console.log(error)
     } finally {
       setSubmitting(false);
     }
@@ -96,6 +97,10 @@ const SignIn = () => {
           />
 
           <OAuth />
+          <TouchableOpacity
+            className="w-6 h-6 px-4 mt-4 bg-secondary self-end"
+            onPress={signOut}>
+          </TouchableOpacity>
 
         </View>
 

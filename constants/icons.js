@@ -14,10 +14,10 @@ import ellipsis from "../assets/icons/ellipsis.png";
 import bike from "../assets/icons/bike.png";
 import add2 from "../assets/icons/add2.png";
 import profilePH from "../assets/icons/profilePH.png";
-import eyeOn from "../assets/icons/eyeOn.png"
-import eyeOff from "../assets/icons/eyeOff.png"
-import GoogleIcon from "../assets/icons/GoogleIcon.png"
-import FacebookIcon from "../assets/icons/FacebookIcon.png"
+import eyeOn from "../assets/icons/eyeOn.png";
+import eyeOff from "../assets/icons/eyeOff.png";
+import GoogleIcon from "../assets/icons/GoogleIcon.png";
+import FacebookIcon from "../assets/icons/FacebookIcon.png";
 
 export default {
     home,

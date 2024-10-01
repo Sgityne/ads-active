@@ -33,20 +33,19 @@ export default function App() {
             </Text>
           </View>
 
-          <View className= "space-y-4">
+          <View>
             <CustomButton
               title="Login"
               handlePress={() => router.push('/sign-in')}
               containerStyles='w-full'
             />
 
-            <TouchableOpacity
-              onPress={() => router.push('/sign-up')}
-              activeOpacity={0.7}
-              className={`rounded-lg min-h-[62px] justify-center items-center w-full border-2 border-secondary bg-primary`}
-            >
-              <Text className= {`text-secondary text-base font-rbold`}>Sign Up</Text>
-            </TouchableOpacity>
+            <CustomButton
+              title="Sign Up"
+              handlePress={() => router.push('/sign-up')}
+              containerStyles='w-full mt-4 bg-primary border-2 border-secondary'
+              textStyle={"color-secondary"}
+            />
           </View>
 
         </View>
