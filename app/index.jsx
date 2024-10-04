@@ -1,4 +1,4 @@
-import { TouchableOpacity, ScrollView, Text, View, Image } from 'react-native';
+import { ScrollView, Text, View, Image } from 'react-native';
 import { Redirect, router, Link } from 'expo-router';
 import { SafeAreaView } from "react-native-safe-area-context";
 // import { StatusBar } from 'expo-status-bar'; |//  for futures implementations for dark mode
@@ -8,9 +8,9 @@ import CustomButton from '../components/CustomButton';
 import { useGlobalContext } from '../context/GlobalProvider';
 
 export default function App() {
-  const {isLoading, isLoggedIn } = useGlobalContext
+  const {isLoading, isLoggedIn } = useGlobalContext();
 
-  if(!isLoading && isLoggedIn) return <Redirect href="/home"/>
+  if (!isLoading && isLoggedIn) return <Redirect href="/explore"/>;
 
   return (
     <SafeAreaView className= "bg-primary h-full">
@@ -62,4 +62,4 @@ export default function App() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};

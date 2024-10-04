@@ -18,6 +18,7 @@ import eyeOn from "../assets/icons/eyeOn.png";
 import eyeOff from "../assets/icons/eyeOff.png";
 import GoogleIcon from "../assets/icons/GoogleIcon.png";
 import FacebookIcon from "../assets/icons/FacebookIcon.png";
+import searchPost from "../assets/icons/search-news.png";
 
 export default {
     home,
@@ -40,4 +41,5 @@ export default {
     eyeOff,
     GoogleIcon,
     FacebookIcon,
+    searchPost,
 };

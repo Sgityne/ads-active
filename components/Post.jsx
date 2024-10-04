@@ -1,7 +1,7 @@
-import {  Text, FlatList, TouchableOpacity, ImageBackground, Linking } from 'react-native'
+import { Text, FlatList, TouchableOpacity, ImageBackground, Linking } from 'react-native'
 import React from 'react'
 import EmptyState from '../components/EmptyState'
-import { images } from '../constants';
+import { icons } from '../constants';
 
 const PostItem = ({posts}) => {
   const { title, thumbnail, post } = posts;
@@ -17,7 +17,7 @@ const PostItem = ({posts}) => {
     >
       <ImageBackground
         source={{uri: thumbnail}}
-        className="w-[183px] h-[250] mr-2 rounded-lg overflow-hidden border-2 border-tertiary shadow-lg shadow-black/40"
+        className="w-[183px] h-[250px] mr-2 rounded-lg overflow-hidden border-2 border-tertiary shadow-lg shadow-black/40"
         resizeMode='cover'
       />
       <Text className="absolute px-4 py-6 color-primary rounded-lg text-base font-rbold text-wrap">
@@ -39,7 +39,7 @@ const Post = ({ posts }) => {
     )}
     ListEmptyComponent={() => (
       <EmptyState
-        image={images.searchPost}
+        image={icons.searchPost}
         title="No tips found"
         subtitle="No tips created yet"
       />
