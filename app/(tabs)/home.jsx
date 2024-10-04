@@ -9,6 +9,7 @@ import ProfileExplorer from '../../components/ProfileExplorer'
 import Post from '../../components/Post'
 import { useGlobalContext } from '../../context/GlobalProvider'
 import { router } from 'expo-router'
+import PickName from '../../components/PickName'
 
 
 const Home = () => {
@@ -36,15 +37,17 @@ const Home = () => {
 
               <View>
                 <Text className="text-base font-rregular">
-                  Welcome Back
+                  Welcome back
                 </Text>
-                <Text className="text-2xl font-rbold">
-                  {user?.username}
-                </Text>
+                <PickName
+                  name={user?.name}
+                  username={user?.username}
+                  isOnHome={true}
+                />
               </View>
 
               <TouchableHighlight
-                onPress={() => router.push('/search')}
+                onPress={() => router.push('/explore')}
                 className="w-12 h-12 justify-center items-center rounded-full"
                 delayPressOut={500}
                 underlayColor={'#CCCCCC'}
