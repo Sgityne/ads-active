@@ -47,7 +47,7 @@ const Home = () => {
               </View>
 
               <TouchableHighlight
-                onPress={() => router.push('/explore')}
+                onPress={() => router.push('/aux_screens/explore')}
                 className="w-12 h-12 justify-center items-center rounded-full"
                 delayPressOut={500}
                 underlayColor={'#CCCCCC'}

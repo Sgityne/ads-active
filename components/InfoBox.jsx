@@ -15,7 +15,7 @@ const InfoBox = ({ user, username, containerStyle }) => {
       <View className="flex-row space-x-1 py-3">
 
         <Text className="font-rregular text-gray-500 text-xs tracking-wide">00 Followers</Text>
-        <View className="w-[1px] h-4 bg-gray-600"></View>
+        <View className="w-[1px] h-4 bg-gray"></View>
         <Text className="font-rregular text-gray-500 text-xs tracking-wide">00 Following</Text>
       </View>
     </View>

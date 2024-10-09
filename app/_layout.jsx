@@ -29,7 +29,10 @@
         <GlobalProvider>
           <Stack>
             <Stack.Screen name="index" options={{ headerShown: false}} />
-            <Stack.Screen name="explore" options={{ headerShown: false}} />
+            <Stack.Screen name="aux_screens/explore" options={{ headerShown: false}} />
+            <Stack.Screen name="aux_screens/create" options={{ headerShown: false}} />
+            <Stack.Screen name="aux_screens/edit" options={{ headerShown: false}} />
+            <Stack.Screen name="aux_screens/select" options={{ headerShown: false}} />
             <Stack.Screen name="(auth)" options={{ headerShown: false}} />
             <Stack.Screen name="(tabs)" options={{ headerShown: false}} />
             <Stack.Screen name="search/[query]" options={{ headerShown: false}} />

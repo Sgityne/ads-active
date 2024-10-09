@@ -97,11 +97,6 @@ const SignIn = () => {
           />
 
           <OAuth />
-          <TouchableOpacity
-            className="w-6 h-6 px-4 mt-4 bg-secondary self-end"
-            onPress={signOut}>
-          </TouchableOpacity>
-
         </View>
 
         <View className= {"flex-row justify-center py-4 gap-1"}>

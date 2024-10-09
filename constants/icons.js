@@ -9,9 +9,8 @@ import social from "../assets/icons/social.png";
 import profileStroke from "../assets/icons/profile-stroke.png";
 import profile from "../assets/icons/profile.png";
 import add1 from "../assets/icons/add1.png";
-import rightArrow from "../assets/icons/right-arrow.png";
+import leftArrow from "../assets/icons/left-arrow.png";
 import ellipsis from "../assets/icons/ellipsis.png";
-import bike from "../assets/icons/bike.png";
 import add2 from "../assets/icons/add2.png";
 import profilePH from "../assets/icons/profilePH.png";
 import eyeOn from "../assets/icons/eyeOn.png";
@@ -20,6 +19,12 @@ import GoogleIcon from "../assets/icons/GoogleIcon.png";
 import FacebookIcon from "../assets/icons/FacebookIcon.png";
 import searchPost from "../assets/icons/search-news.png";
 import logout from "../assets/icons/logout.png";
+import upArrow from "../assets/icons/up-arrow.png";
+import downArrow from "../assets/icons/down-arrow.png";
+import addActivity from "../assets/icons/add-symbol.png";
+import running from "../assets/icons/running.png";
+import biking from "../assets/icons/biking.png";
+import skating from "../assets/icons/skating.png";
 
 export default {
     home,
@@ -33,9 +38,8 @@ export default {
     profile,
     profileStroke,
     add1,
-    rightArrow,
+    leftArrow,
     ellipsis,
-    bike,
     add2,
     profilePH,
     eyeOn,
@@ -44,4 +48,10 @@ export default {
     FacebookIcon,
     searchPost,
     logout,
+    downArrow,
+    upArrow,
+    addActivity,
+    running,
+    biking,
+    skating,
 };

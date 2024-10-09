@@ -1,16 +1,19 @@
 import { View, Text, FlatList, TouchableOpacity, Image, ImageBackground } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import useAppwrite from '../../lib/useAppwrite';
-import { getUserActivities, signOut } from '../../lib/appwrite';
+import { getLatestActivities, signOut } from '../../lib/appwrite';
 import { icons } from '../../constants';
 import { useGlobalContext } from '../../context/GlobalProvider'
 import InfoBox from '../../components/InfoBox';
 import { router } from 'expo-router';
+import FavoriteActivity from '../../components/FavoriteActivity';
+import RecentActivity from '../../components/RecentActivity';
 
 const Profile = () => {
   const { user, setUser, setIsLoggedIn} = useGlobalContext();
-  const { data: activities} = useAppwrite(() => getUserActivities(user.$id));
+  const { data: activities} = useAppwrite(() => getLatestActivities(user.$id));
+
 
   const logout = async () => {
     await signOut();
@@ -19,13 +22,10 @@ const Profile = () => {
 
     router.replace('/sign-in')
   }
-
+  
   return (
     <SafeAreaView className='bg-primary h-full'>
       <FlatList
-        data={activities}
-        keyExtractor={(item) => item.$id}
-        renderItem={({ item }) => {}}
         ListHeaderComponent={() => (
 
           <View>
@@ -62,12 +62,12 @@ const Profile = () => {
                   />
 
                 <TouchableOpacity
-                  //onPress={} this needs to follow the person
+                  onPress={() => router.push('/aux_screens/edit')}
                   activeOpacity={0.7}
                   className={"bg-primary border-2 rounded-lg w-[133px] h-10 justify-center items-center m-4"}
                   >
                   <Text className= {`text-black text-base font-rbold`}>
-                    Follow
+                    Edit Profile
                   </Text>
                 </TouchableOpacity>
               </View>
@@ -77,7 +77,22 @@ const Profile = () => {
               user={user?.name}
               username={user?.username}
               containerStyle={"px-6"}
+            /> 
+            
+            <Text className="font-rbold text-base text-black ml-6">Favorite Activity</Text>
+
+            <FavoriteActivity
+              activity={user?.favorite ?? []}
+              otherStyles={"px-6"}
             />
+            <View className="w-full px-6">
+
+              <Text className="mt-1 font-rbold text-base text-black">Recent Activities</Text>
+              
+              <View className="w-full py-3">
+                <RecentActivity activity={activities ?? []}/>
+              </View>
+            </View>
           </View>
         )}
       />
