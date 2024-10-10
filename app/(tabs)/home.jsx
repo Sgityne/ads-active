@@ -15,7 +15,7 @@ import PickName from '../../components/PickName'
 
 const Home = () => {
   const { data: posts, refetch } = useAppwrite(getAllPosts);
-  const { data: profile} = useAppwrite(getAllProfiles);
+  const { data: profile} = useAppwrite(() => getAllProfiles (user.$id));
   const { user } = useGlobalContext();
 
   const [refreshing, setRefreshing] = useState(false);

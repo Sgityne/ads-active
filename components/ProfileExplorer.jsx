@@ -1,13 +1,24 @@
 import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import EmptyState from '../components/EmptyState'
 import { images } from '../constants';
+import { router, usePathname } from 'expo-router';
 
 const ProfileItem = ({profile}) => {
-  const { username, avatar } = profile;
+  const { username, avatar, $id } = profile;
+
+  const pathname = usePathname()
+  const [oprofile, setOProfile] = useState($id);
 
   return(
-    <View className="w-[183px] h-[250] rounded-lg justify-center items-center space-y-2 px-4 py-8 mr-4 bg-gray-200">
+    <TouchableOpacity
+      onPress={() => {
+        
+        if (pathname.startsWith("/vprofile")) router.setParams({ oprofile });
+        else router.push(`/vprofile/${oprofile}`)
+      }}
+      className="w-[183px] h-[250] rounded-lg justify-center items-center space-y-2 px-4 py-8 mr-4 bg-gray-200"
+    >
       <Image
         source={{ uri: avatar }}
         resizeMode='cover'
@@ -29,7 +40,7 @@ const ProfileItem = ({profile}) => {
           </Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </TouchableOpacity>
 
   )
 }
