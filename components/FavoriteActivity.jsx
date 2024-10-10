@@ -2,6 +2,7 @@ import { View, Text, FlatList, Image } from 'react-native'
 import React from 'react'
 import PickIcon from './PickIcon';
 import { icons } from '../constants';
+import moment from 'moment';
   
 const FavoriteActivity = ({ activity, otherStyles }) => {
   
@@ -22,7 +23,9 @@ const FavoriteActivity = ({ activity, otherStyles }) => {
                 <Text className="font-rregular text-sm text-black">{activity.time}</Text>
               </View>
         
-              <Text className="font-rmedium text-sm text-gray self-end pb-1">7 days ago</Text>
+              <Text className="font-rmedium text-sm text-gray self-end pb-1">
+                {moment(activity.$createdAt, 'YYYY, M, D').fromNow()}
+              </Text>
             </View>
           )
           } else {

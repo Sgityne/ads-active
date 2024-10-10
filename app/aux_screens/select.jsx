@@ -5,11 +5,11 @@ import { icons } from '../../constants'
 import { useGlobalContext } from '../../context/GlobalProvider'
 import { router } from 'expo-router'
 import useAppwrite from '../../lib/useAppwrite';
-import { getUserActivities, updateProfile } from '../../lib/appwrite'
+import { getCurrentUser, getUserActivities, updateProfile } from '../../lib/appwrite'
 import PickIcon from '../../components/PickIcon'
 
 const Select = () => {
-  const { user } = useGlobalContext();
+  const { user, setUser, setIsLoggedIn } = useGlobalContext();
   const { data: activities} = useAppwrite(() => getUserActivities(user.$id));
   const [uploading, setUploading] = useState(false);
   const [ form, setForm ] = useState({
@@ -21,6 +21,12 @@ const Select = () => {
 
     try {
       await updateProfile(form, user.$id);
+
+      setUser(null)
+      setIsLoggedIn(false)
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLoggedIn(true);
 
       router.push('/profile')
     } catch (error) {

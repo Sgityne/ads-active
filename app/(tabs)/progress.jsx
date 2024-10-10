@@ -7,12 +7,12 @@ import { router } from 'expo-router'
 import useAppwrite from '../../lib/useAppwrite';
 import { getUserActivities } from '../../lib/appwrite'
 import PickIcon from '../../components/PickIcon'
+import moment from 'moment'
 
 
 const Progress = () => {
   const { data: activities} = useAppwrite(() => getUserActivities(user.$id));
   const { user } = useGlobalContext();
-  
 
   return (
     <SafeAreaView className='bg-primary h-full'>
@@ -59,7 +59,9 @@ const Progress = () => {
               <Text className="font-rbold text-base text-black tracking-wide">{item.distance} km</Text>
               <Text className="font-rregular text-sm text-black">{item.time}</Text>
             </View>
-            <Text className="font-rmedium text-sm text-gray self-end pb-1">7 days ago</Text>
+            <Text className="font-rmedium text-sm text-gray self-end pb-1">
+              {moment(item.$createdAt, 'YYYY, M, D').fromNow()}
+            </Text>
 
           </View>
         )}
