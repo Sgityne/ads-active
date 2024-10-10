@@ -1,11 +1,12 @@
 import { View, Text, Alert } from 'react-native'
 import React, { useState } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import CustomButton from '../../components/CustomButton'
-import ActivityType from '../../components/ActivityType'
 import { router } from 'expo-router'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
 import { createActivity } from '../../lib/appwrite'
 import { useGlobalContext } from '../../context/GlobalProvider'
+import CustomButton from '../../components/CustomButton'
+import ActivityType from '../../components/ActivityType'
 import MaskInput from '../../components/MaskInput'
 
 const Create = () => {

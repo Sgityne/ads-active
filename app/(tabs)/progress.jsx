@@ -1,9 +1,10 @@
 import { View, Text, FlatList, Image, TouchableHighlight } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { router } from 'expo-router'
+
 import { icons } from '../../constants'
 import { useGlobalContext } from '../../context/GlobalProvider'
-import { router } from 'expo-router'
 import useAppwrite from '../../lib/useAppwrite';
 import { getUserActivities } from '../../lib/appwrite'
 import PickIcon from '../../components/PickIcon'

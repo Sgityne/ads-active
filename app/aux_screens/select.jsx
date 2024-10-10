@@ -1,12 +1,14 @@
 import { View, Text, FlatList, Image, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { icons } from '../../constants'
-import { useGlobalContext } from '../../context/GlobalProvider'
 import { router } from 'expo-router'
+
+import { icons } from '../../constants'
+import PickIcon from '../../components/PickIcon'
+
+import { useGlobalContext } from '../../context/GlobalProvider'
 import useAppwrite from '../../lib/useAppwrite';
 import { getCurrentUser, getUserActivities, updateProfile } from '../../lib/appwrite'
-import PickIcon from '../../components/PickIcon'
 
 const Select = () => {
   const { user, setUser, setIsLoggedIn } = useGlobalContext();

@@ -1,12 +1,14 @@
 import { View, Text, FlatList, TouchableOpacity, Image, ImageBackground } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { router } from 'expo-router';
+
 import useAppwrite from '../../lib/useAppwrite';
 import { getLatestActivities, signOut } from '../../lib/appwrite';
-import { icons } from '../../constants';
 import { useGlobalContext } from '../../context/GlobalProvider'
+
+import { icons } from '../../constants';
 import InfoBox from '../../components/InfoBox';
-import { router } from 'expo-router';
 import FavoriteActivity from '../../components/FavoriteActivity';
 import RecentActivity from '../../components/RecentActivity';
 

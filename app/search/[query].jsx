@@ -1,9 +1,11 @@
 import { View, Text, FlatList, TouchableOpacity, Image, ImageBackground } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useLocalSearchParams } from 'expo-router';
+
 import useAppwrite from '../../lib/useAppwrite';
 import { searchProfile } from '../../lib/appwrite';
+
 import SearchInput from '../../components/SearchInput';
 import EmptyState from '../../components/EmptyState';
 import { icons } from '../../constants';

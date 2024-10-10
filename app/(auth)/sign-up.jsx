@@ -2,10 +2,12 @@ import { ScrollView, View, Text, Image, Alert } from 'react-native'
 import React, { useState } from 'react'
 import {SafeAreaView} from 'react-native-safe-area-context'
 import { Link, router } from 'expo-router'
+
 import { images } from '../../constants/';
 import FormField from '../../components/FormField';
 import CustomButton from '../../components/CustomButton';
 import OAuth from '../../components/OAuth';
+
 import { createUser } from '../../lib/appwrite';
 import { useGlobalContext } from '../../context/GlobalProvider';
 

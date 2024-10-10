@@ -1,14 +1,15 @@
 import { View, Text, FlatList, Image, TouchableHighlight, RefreshControl } from 'react-native'
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { router } from 'expo-router'
 
-import { icons } from '../../constants'
+import { useGlobalContext } from '../../context/GlobalProvider'
 import { getAllPosts, getAllProfiles } from '../../lib/appwrite'
 import useAppwrite from '../../lib/useAppwrite'
+
+import { icons } from '../../constants'
 import ProfileExplorer from '../../components/ProfileExplorer'
 import Post from '../../components/Post'
-import { useGlobalContext } from '../../context/GlobalProvider'
-import { router } from 'expo-router'
 import PickName from '../../components/PickName'
 
 
