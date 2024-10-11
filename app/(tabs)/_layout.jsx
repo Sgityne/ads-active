@@ -85,7 +85,7 @@ const TabsLayout = () => {
             ),
           }}
         />
-        <Tabs.Screen
+        {/* <Tabs.Screen
           name="social"
           options={{
             title: 'Social',
@@ -98,7 +98,7 @@ const TabsLayout = () => {
               />
             ),
           }}
-        />
+        /> */}
         <Tabs.Screen
           name="profile"
           options={{

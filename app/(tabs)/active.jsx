@@ -21,7 +21,6 @@ const Active = () => {
     distance: "0.00",  // Alterado para string
   })
   
-  console.log(form)
   const submit = async () => {
     if (!form.type || form.time === "00:00:00" || form.distance === "0.00"){
       return Alert.alert("Please fill in all the fields")

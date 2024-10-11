@@ -98,7 +98,7 @@ const SignIn = () => {
               isLoading={isSubmitting}
           />
 
-          <OAuth />
+          {/* <OAuth /> */}
         </View>
 
         <View className= {"flex-row justify-center py-4 gap-1"}>

@@ -24,13 +24,19 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff",
         "package": "com.ads.active"
-      }
+      },
+      "package": "com.sgityne.activetogether"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-router"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "26343886-57fc-4e62-9654-65cde6603a4a"
+      }
+    }
   }
 }

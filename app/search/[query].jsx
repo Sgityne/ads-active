@@ -62,7 +62,7 @@ const Search = () => {
                   resizeMode='cover'
                   />
 
-                <TouchableOpacity
+                {/* <TouchableOpacity
                   //onPress={} this needs to follow the person
                   activeOpacity={0.7}
                   className={"bg-primary border-2 rounded-lg w-[100px] h-[30px] justify-center items-center mr-2"}
@@ -70,7 +70,7 @@ const Search = () => {
                   <Text className= {`text-black text-base font-rbold`}>
                     Follow
                   </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
 
               <InfoBox

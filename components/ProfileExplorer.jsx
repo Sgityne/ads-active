@@ -30,7 +30,7 @@ const ProfileItem = ({profile}) => {
           {username}
         </Text>
 
-        <TouchableOpacity
+        {/* <TouchableOpacity
           //onPress={handlePress}
           activeOpacity={0.7}
           className={"bg-gray-200 border-2 border-black w-[120px] h-[36px] mt-7 justify-center items-center"}
@@ -38,7 +38,7 @@ const ProfileItem = ({profile}) => {
           <Text className= {`text-black text-base font-rbold text-center`}>
             Follow
           </Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
     </TouchableOpacity>
 

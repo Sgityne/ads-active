@@ -54,7 +54,7 @@ const ViewProfile = () => {
                   resizeMode='cover'
                   />
 
-                <TouchableOpacity
+                {/* <TouchableOpacity
                   //onPress={}
                   activeOpacity={0.7}
                   className={"bg-primary border-2 rounded-lg w-[133px] h-10 justify-center items-center m-4"}
@@ -62,7 +62,7 @@ const ViewProfile = () => {
                   <Text className= {`text-black text-base font-rbold`}>
                     Follow
                   </Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
             </View>
 

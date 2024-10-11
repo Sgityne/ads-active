@@ -50,14 +50,14 @@ export default function App() {
 
         </View>
 
-        <View className= {"self-center py-4"}>
+        {/* <View className= {"self-center py-4"}>
           <Link
             href={'/home'}
             className= "text-base font-rmedium underline color-tertiary"
         >
           Continue as a guest
           </Link>     
-        </View>
+        </View> */}
         
       </ScrollView>
     </SafeAreaView>

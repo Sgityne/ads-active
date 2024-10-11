@@ -97,7 +97,7 @@ const SignUp = () => {
               isLoading={isSubmitting}
           />
 
-          <OAuth />
+          {/* <OAuth /> */}
 
         </View>
 
