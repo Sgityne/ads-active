@@ -25,6 +25,11 @@ import addActivity from "../assets/icons/add-symbol.png";
 import running from "../assets/icons/running.png";
 import biking from "../assets/icons/biking.png";
 import skating from "../assets/icons/skating.png";
+import play from "../assets/icons/playbutton.png";
+import stop from "../assets/icons/stopbutton.png";
+import selectR from "../assets/icons/selectbuttonR.png";
+import selectL from "../assets/icons/selectbuttonL.png";
+import marker from "../assets/icons/marker.png";
 
 export default {
     home,
@@ -54,4 +59,9 @@ export default {
     running,
     biking,
     skating,
+    play,
+    stop,
+    selectR,
+    selectL,
+    marker,
 };
